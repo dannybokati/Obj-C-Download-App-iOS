@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,49 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaO-YX-dTS">
+                                <rect key="frame" x="159" y="144" width="96" height="30"/>
+                                <state key="normal" title="Download File"/>
+                                <connections>
+                                    <action selector="downloadFileAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QMh-jI-Owq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14j-TK-lg6">
+                                <rect key="frame" x="150" y="274" width="114" height="30"/>
+                                <state key="normal" title="Pause Download"/>
+                                <connections>
+                                    <action selector="pauseDownloadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JAE-4E-PY9"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zk0-oq-1PD">
+                                <rect key="frame" x="36" y="447" width="342" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zk0-oq-1PD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4m5-RV-iTg"/>
+                            <constraint firstItem="Zk0-oq-1PD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="Gco-rO-8LH"/>
+                            <constraint firstItem="gaO-YX-dTS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JTm-iP-paw"/>
+                            <constraint firstItem="Zk0-oq-1PD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MxQ-4R-P7E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zk0-oq-1PD" secondAttribute="trailing" constant="16" id="NG4-ZJ-jDP"/>
+                            <constraint firstItem="14j-TK-lg6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tkh-2s-yXp"/>
+                            <constraint firstItem="gaO-YX-dTS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="tt0-bH-CAs"/>
+                            <constraint firstItem="14j-TK-lg6" firstAttribute="top" secondItem="gaO-YX-dTS" secondAttribute="bottom" constant="100" id="xdE-Ju-SAy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="downloadProgressBar" destination="Zk0-oq-1PD" id="fPa-yv-vdU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="95"/>
         </scene>
     </scenes>
 </document>

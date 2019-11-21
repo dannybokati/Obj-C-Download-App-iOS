@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property(nonatomic, strong) NSURLConnection *downloadingConnection;
+@property(nonatomic, strong) NSFileHandle *fileHandle;
+@property (weak, nonatomic) IBOutlet UIProgressView *downloadProgressBar;
 
 @end
 
